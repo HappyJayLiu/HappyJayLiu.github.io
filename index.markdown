@@ -4,6 +4,7 @@
 
 layout: home
 ---
+## No man ever steps in the same river twice
 ## Welcome to my Personal Homepage
 ### Personal Profile
 - 🎓 自动化专业  
@@ -11,7 +12,7 @@ layout: home
 - 📚 感知 & 控制 & 决策 & 规划
 
 ### Vision
-To be a scientist or engineering.<br>
+To be a scientist or engineering<br>
 Enjoying scientific research itself is the lifelong destination for researchers.
 
 ### Project Presentation
