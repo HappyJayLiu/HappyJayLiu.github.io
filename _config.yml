@@ -29,9 +29,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: HappyJayLiu
 github_username:  HappyJayLiu
-
+include: ["_pages", "_data", "assets"]
 # Build settings
-theme: minimaLiu
+theme: minima
 plugins:
   - jekyll-feed
 
