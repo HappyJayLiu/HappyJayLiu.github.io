@@ -13,7 +13,7 @@ layout: home
 
 ### Vision
 To be a scientist or engineering\
-Enjoying scientific research itself is the lifelong destination for researchers.
+Enjoying scientific research itself is the lifelong destination for researchers
 
 ### Project Presentation
 github website: https://github.com/HappyJayLiu
