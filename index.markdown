@@ -4,7 +4,6 @@
 
 layout: home
 ---
-## No man ever steps in the same river twice
 ## Welcome to my Personal Homepage
 ### Personal Profile
 - 🎓 自动化专业  
