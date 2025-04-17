@@ -12,7 +12,7 @@ layout: home
 - 📚 感知 & 控制 & 决策 & 规划
 
 ### Vision
-To be a scientist or engineering<br>
+To be a scientist or engineering\n
 Enjoying scientific research itself is the lifelong destination for researchers.
 
 ### Project Presentation
