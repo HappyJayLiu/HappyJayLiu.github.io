@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Project Introduction"
+title:  "Project Introduction(This is a link that can be opened)"
 date:   2025-05-20 
 categories: Technology
 ---
