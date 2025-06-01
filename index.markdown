@@ -12,8 +12,8 @@ layout: home
 
 ### Vision
 To be a scholar or engineer\
-Enjoying scientific research itself is the lifelong destination for researchers
-No man ever steps in the same river twice
+Enjoying scientific research itself is the lifelong destination for researchers\
+I am waiting for the only soul in this world that is compatible
 
 ### Project Presentation
 github website: https://github.com/HappyJayLiu
@@ -28,7 +28,7 @@ github website: https://github.com/HappyJayLiu
 ### 愿景
 成为学者或工程师\
 享受科学研究本身就是研究人员的终身目标\
-没有人会两次踏入同一条河
+我在等这世上唯一契合的灵魂
 
 
 ### 项目介绍
