@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: post
 title:  YaoYao
 date:   2025-06-01 
 categories: "Waiting for the only soul that matches perfectly in this world"
