@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You | HappyJayLiu的表白</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        .title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e, #ffafbd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .heart-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            perspective: 1000px;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+        }
+        
+        .heart-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .heart-shape {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            transform: rotate(45deg);
+            position: relative;
+            box-shadow: 0 0 50px rgba(255, 107, 107, 0.7);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        .heart-shape:before,
+        .heart-shape:after {
+            content: "";
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .heart-shape:before {
+            top: -100px;
+            left: 0;
+        }
+        
+        .heart-shape:after {
+            top: 0;
+            left: -100px;
+        }
+        
+        .message {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1.5s ease-out;
+        }
+        
+        .message-content {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .signature {
+            font-size: 2.2rem;
+            font-family: 'Brush Script MT', cursive;
+            color: #ffafbd;
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255, 175, 189, 0.5);
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 107, 107, 0.6);
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.8);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2rem;
+            opacity: 0.7;
+            animation: fadeIn 3s ease-out;
+        }
+        
+        /* Animations */
+        @keyframes rotate {
+            0% {
+                transform: rotateY(0deg) rotateX(10deg);
+            }
+            100% {
+                transform: rotateY(360deg) rotateX(10deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: rotate(45deg) scale(1);
+                box-shadow: 0 0 50px rgba(255, 107, 107, 0.7);
+            }
+            100% {
+                transform: rotate(45deg) scale(1.1);
+                box-shadow: 0 0 70px rgba(255, 107, 107, 0.9);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .heart-container {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .heart-shape {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .heart-shape:before,
+            .heart-shape:after {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .heart-shape:before {
+                top: -75px;
+            }
+            
+            .heart-shape:after {
+                left: -75px;
+            }
+            
+            .message-content {
+                font-size: 1.5rem;
+            }
+            
+            .signature {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .heart-container {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .heart-shape {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .heart-shape:before,
+            .heart-shape:after {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .heart-shape:before {
+                top: -50px;
+            }
+            
+            .heart-shape:after {
+                left: -50px;
+            }
+            
+            .message-content {
+                font-size: 1.2rem;
+            }
+            
+            .signature {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title">For You</h1>
+            <p class="subtitle">在这个特别的日子里，我想对你说...</p>
+        </div>
+        
+        <div class="heart-container">
+            <div class="heart">
+                <div class="heart-face">
+                    <div class="heart-shape"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="message">
+            <p class="message-content">
+                我能遇见你已经是很不可思议了<br>
+                都说<br>
+                女孩会记住让她笑的人<br>
+                男孩会记住让他哭的人<br>
+                但都不重要<br>
+                我们终将会遇到一个陪我们一起哭一起笑一起胡闹的人美妙地共度一生<br>
+                把无关的一切都忘掉<br>
+            </p>
+            <p class="signature">HappyJayLiu</p>
+        </div>
+        
+        <div class="footer">
+            <p>Made with ❤️ | https://happyjayliu.github.io</p>
+        </div>
+    </div>
+
+    <script>
+        // 创建粒子背景
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // 随机位置
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                particle.style.left = `${posX}vw`;
+                particle.style.top = `${posY}vh`;
+                
+                // 随机大小
+                const size = 2 + Math.random() * 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // 随机颜色
+                const colors = [
+                    'rgba(255, 107, 107, 0.7)',
+                    'rgba(255, 142, 142, 0.7)',
+                    'rgba(255, 175, 189, 0.7)',
+                    'rgba(255, 215, 215, 0.7)'
+                ];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                // 随机动画
+                const duration = 10 + Math.random() * 20;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+                
+                // 添加浮动动画
+                const keyframes = `
+                @keyframes float {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+                    25% {
+                        transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+                    }
+                    50% {
+                        transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+                    }
+                    75% {
+                        transform: translate(${Math.random() * 50 - 25}px, ${Math.random() * 50 - 25}px);
+                    }
+                    100% {
+                        transform: translate(0, 0);
+                    }
+                }`;
+                
+                const styleSheet = document.styleSheets[0];
+                styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // 添加心形点击效果
+        document.querySelector('.heart-shape').addEventListener('click', function() {
+            this.style.animation = 'none';
+            void this.offsetWidth; // 触发重绘
+            this.style.animation = 'pulse 0.5s ease-in-out';
+            
+            // 创建粒子爆发效果
+            createHeartParticles();
+        });
+        
+        // 创建心形粒子爆发
+        function createHeartParticles() {
+            const container = document.getElementById('particles');
+            const heartRect = document.querySelector('.heart-shape').getBoundingClientRect();
+            const heartCenterX = heartRect.left + heartRect.width / 2;
+            const heartCenterY = heartRect.top + heartRect.height / 2;
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.position = 'fixed';
+                particle.style.left = `${heartCenterX}px`;
+                particle.style.top = `${heartCenterY}px`;
+                particle.style.width = '10px';
+                particle.style.height = '10px';
+                particle.style.background = 'rgba(255, 107, 107, 0.8)';
+                particle.style.borderRadius = '50%';
+                particle.style.boxShadow = '0 0 15px rgba(255, 107, 107, 0.9)';
+                
+                document.body.appendChild(particle);
+                
+                // 随机方向
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 100 + Math.random() * 100;
+                
+                // 动画
+                const animation = particle.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0.2)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 1000,
+                    easing: 'ease-out'
+                });
+                
+                animation.onfinish = () => {
+                    particle.remove();
+                };
+            }
+        }
+        
+        // 初始化页面
+        window.addEventListener('load', function() {
+            createParticles();
+            
+            // 添加背景音乐（可选）
+            /*
+            const audio = new Audio('https://example.com/romantic-music.mp3');
+            audio.loop = true;
+            audio.volume = 0.3;
+            document.addEventListener('click', function() {
+                audio.play().catch(e => console.log("Audio play failed:", e));
+            }, { once: true });
+            */
+        });
+    </script>
+</body>
+</html>
