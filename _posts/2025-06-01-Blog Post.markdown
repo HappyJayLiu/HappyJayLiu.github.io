@@ -1,12 +1,11 @@
 ---
-layout: YaoYao
-title:  "Waiting for the only soul that matches perfectly in this world"
+layout: 
+title:  YaoYao
 date:   2025-06-01 
-categories: 
+categories: "Waiting for the only soul that matches perfectly in this world"
 ---
 
 ## 1 Love
-
 **Link**  
 
 
